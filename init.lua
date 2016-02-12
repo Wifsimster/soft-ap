@@ -31,8 +31,10 @@ srv:listen(80,function(conn)
     conn:on("receive", function(client,request)
         if(request == "1")then
             gpio.write(gpio2, gpio.HIGH);
+            print("HIGH")
         elseif(request == "0")then
             gpio.write(gpio2, gpio.LOW);
+            print("LOW")
         end
         -- Close session
         local response = "HTTP/1.1 200 OK\r\n\r\nOK"
